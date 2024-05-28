@@ -1,3 +1,4 @@
+// app/page.tsx
 'use client';
 
 import { FC, useEffect, useState } from 'react';
@@ -26,4 +27,3 @@ const Home: FC = () => {
 };
 
 export default Home;
-
