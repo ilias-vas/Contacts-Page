@@ -14,18 +14,24 @@ const Contact: FC<Props> = ({ contact }) => {
         <div className="card-front bg-gray-100 flex items-center justify-center backface-hidden rounded-lg">
           <h2 className="text-xl font-semibold">{contact.name}</h2>
         </div>
-        <div className="card-back bg-gray-200 p-4 backface-hidden overflow-auto rounded-lg">
-          <p className="mb-1"><strong>Username:</strong> {contact.username}</p>
-          <p className="mb-1"><strong>Email:</strong> {contact.email}</p>
-          <p className="mb-1"><strong>Phone:</strong> {contact.phone}</p>
-          <p className="mb-1"><strong>Website:</strong> <a href={`http://${contact.website}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">{contact.website}</a></p>
-          <h3 className="font-semibold mt-4">Address</h3>
-          <p className="mb-1">{contact.address.street}, {contact.address.suite}</p>
-          <p className="mb-1">{contact.address.city}, {contact.address.zipcode}</p>
-          <h3 className="font-semibold mt-4">Company</h3>
-          <p className="mb-1"><strong>Name:</strong> {contact.company.name}</p>
-          <p className="mb-1"><strong>CatchPhrase:</strong> {contact.company.catchPhrase}</p>
-          <p className="mb-1"><strong>BS:</strong> {contact.company.bs}</p>
+        <div className="card-back bg-gray-200 p-4 backface-hidden overflow-auto rounded-lg relative">
+          <div className="absolute top-2 right-2 flex space-x-2">
+            <button className="bg-blue-500 text-white px-2 py-1 rounded">Update</button>
+            <button className="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
+          </div>
+          <div className="mt-2">
+            <p className="mb-1"><strong>Username:</strong> {contact.username}</p>
+            <p className="mb-1"><strong>Email:</strong> {contact.email}</p>
+            <p className="mb-1"><strong>Phone:</strong> {contact.phone}</p>
+            <p className="mb-1"><strong>Website:</strong> <a href={`http://${contact.website}`} target="_blank" rel="noopener noreferrer" className="text-blue-500 underline">{contact.website}</a></p>
+            <h3 className="font-semibold mt-4">Address</h3>
+            <p className="mb-1">{contact.address.street}, {contact.address.suite}</p>
+            <p className="mb-1">{contact.address.city}, {contact.address.zipcode}</p>
+            <h3 className="font-semibold mt-4">Company</h3>
+            <p className="mb-1"><strong>Name:</strong> {contact.company.name}</p>
+            <p className="mb-1"><strong>CatchPhrase:</strong> {contact.company.catchPhrase}</p>
+            <p className="mb-1"><strong>BS:</strong> {contact.company.bs}</p>
+          </div>
         </div>
       </div>
     </div>
