@@ -1,9 +1,8 @@
-// app/page.tsx
 'use client';
 
 import { FC, useEffect, useState } from 'react';
-import Contact from '../components/Contact';
-import { Contact as ContactType } from '../types/types';
+import Contact from '@/components/Contact';
+import { Contact as ContactType } from '@/types/types';
 
 const Home: FC = () => {
   const [contacts, setContacts] = useState<ContactType[]>([]);
@@ -27,3 +26,4 @@ const Home: FC = () => {
 };
 
 export default Home;
+
