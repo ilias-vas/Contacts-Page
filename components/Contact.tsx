@@ -1,8 +1,7 @@
-// components/Contact.tsx
 'use client';
 
 import { FC } from 'react';
-import { Contact as ContactType } from '../types/types';
+import { Contact as ContactType } from '@/types/types';
 
 interface Props {
   contact: ContactType;
@@ -10,12 +9,12 @@ interface Props {
 
 const Contact: FC<Props> = ({ contact }) => {
   return (
-    <div className="relative w-full h-64 perspective">
-      <div className="absolute inset-0 transition-transform transform-style-preserve-3d duration-500 hover:rotate-y-180">
-        <div className="absolute inset-0 bg-gray-100 flex items-center justify-center backface-hidden">
+    <div className="flip-card w-full h-64 perspective">
+      <div className="card-container preserve-3d border border-gray-300 rounded-lg">
+        <div className="card-front bg-gray-100 flex items-center justify-center backface-hidden rounded-lg">
           <h2 className="text-xl font-semibold">{contact.name}</h2>
         </div>
-        <div className="absolute inset-0 bg-gray-200 p-4 backface-hidden rotate-y-180">
+        <div className="card-back bg-gray-200 p-4 backface-hidden overflow-auto rounded-lg">
           <p className="mb-1"><strong>Username:</strong> {contact.username}</p>
           <p className="mb-1"><strong>Email:</strong> {contact.email}</p>
           <p className="mb-1"><strong>Phone:</strong> {contact.phone}</p>
@@ -34,4 +33,5 @@ const Contact: FC<Props> = ({ contact }) => {
 };
 
 export default Contact;
+
 
